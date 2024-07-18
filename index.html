@@ -178,7 +178,19 @@
       width: 100%; /* Videos fill the container width */
       height: auto;
   }
+  .video-grid-two-cols-narrow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px; /* Gap between videos */
+    width: 50%; /* Set the container width to 60% */
+    margin: 0 auto; /* Center the container horizontally */
+    align-items: center;
+}
 
+.video-grid-two-cols-narrow video {
+    width: 100%; /* Videos fill the container width */
+    height: auto;
+}
   .video-grid-three-cols {
       display: grid;
       grid-template-columns: repeat(3, 1fr); /* Two columns */
@@ -241,7 +253,7 @@
   </div>
   <div class="video-grid-three-cols-wide">
     <div class="video-container">
-      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/bear.mp4" type="video/mp4"></video>
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/bear_input.mp4" type="video/mp4"></video>
       <h2 class="video-title">Input Video</h2>
     </div>
     <div class="video-container">
@@ -254,18 +266,64 @@
       <h2 class="video-title">Novel View</h2>
     </div>
   </div>
+  
   <div class="video-grid-three-cols-wide">
     <div class="video-container">
-      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/bike-packing.mp4" type="video/mp4"></video>
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/dance-jump_input.mp4" type="video/mp4"></video>
       <h2 class="video-title">Input Video</h2>
     </div>
     <div class="video-container">
-      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/bike-packing-tracks.mp4" type="video/mp4">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/dance-jump-tracks.mp4" type="video/mp4">
       </video>
       <h2 class="video-title">3D Tracks</h2>
     </div>
     <div class="video-container">
-      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/bike-packing.mov" type="video/mp4"></video>
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/dance-jump.mov" type="video/mp4"></video>
+      <h2 class="video-title">Novel View</h2>
+    </div>
+  </div>
+  <div class="video-grid-three-cols-wide">
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/rhino_input.mp4" type="video/mp4"></video>
+      <h2 class="video-title">Input Video</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/rhino-tracks.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">3D Tracks</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/rhino.mov" type="video/mp4"></video>
+      <h2 class="video-title">Novel View</h2>
+    </div>
+  </div>
+  <div class="video-grid-three-cols-wide">
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/schoolgirls_input.mp4" type="video/mp4"></video>
+      <h2 class="video-title">Input Video</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/schoolgirls-tracks.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">3D Tracks</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/schoolgirls.mov" type="video/mp4"></video>
+      <h2 class="video-title">Novel View</h2>
+    </div>
+  </div>
+  <div class="video-grid-three-cols-wide">
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/breakdance-flare_input.mp4" type="video/mp4"></video>
+      <h2 class="video-title">Input Video</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/breakdance-flare-tracks.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">3D Tracks</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/breakdance-flare.mov" type="video/mp4"></video>
       <h2 class="video-title">Novel View</h2>
     </div>
   </div>
@@ -421,7 +479,7 @@
       </div>
     </div>
   </div> -->
-  <div class="video-grid-two-cols">
+  <div class="video-grid-two-cols-narrow">
     <div class="video-container">
       <video class="carousel-video" controls muted loop playsinline poster="static/images/mochi-high-five_tapir.jpg" data-src="static/videos/mochi-high-five_tapir.mp4" type="video/mp4"></video>
       <h2 class="video-title">TAPIR</h2>
@@ -480,7 +538,7 @@
       </div>
     </div>
   </div>
-  <div class="video-grid-two-cols">
+<div class="video-grid-two-cols">
     <div class="video-container">
       <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/hike.mp4" type="video/mp4"></video>
     </div>
@@ -488,8 +546,8 @@
     <div class="video-container">
       <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/hike.mov" type="video/mp4">
       </video>
+</div>
     </div>
-  </div>
 
 </section>
 
@@ -498,7 +556,7 @@
 <section class="section" id="Acknowledgements">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Acknowledgements</h2>
-    We thank Ruilong Li, Noah Snavely, Brent Yi and Aleksander Holynski for helpful discussion. This project is supported in part by DARPA No. HR001123C0021. and  IARPA DOI/IBC No. 140D0423C0035. The views and conclusions contained herein are those of the authors and do not represent the official policies or endorsements of these institutions. 
+    We thank Ruilong Li, Noah Snavely, Brent Yi and Aleksander Holynski for helpful discussion. This project is supported in part by DARPA No. HR001123C0021. and  IARPA DOI/IBC No. 140D0423C0035. We are in memory of our beloved cat Sriracha, who will always be missed and loved. The views and conclusions contained herein are those of the authors and do not represent the official policies or endorsements of these institutions. 
   </div>
 </section>
 
