@@ -169,6 +169,7 @@
       gap: 10px; /* Gap between videos */
       width: 60%; /* Set the container width to 60% */
       margin: 0 auto; /* Center the container horizontally */
+      align-items: center;
   }
 
   .video-grid-two-cols video {
@@ -182,12 +183,27 @@
       gap: 10px; /* Gap between videos */
       width: 60%; /* Set the container width to 60% */
       margin: 0 auto; /* Center the container horizontally */
+      align-items: center;
   }
 
   .video-grid-three-cols video {
       width: 100%; /* Videos fill the container width */
       height: auto;
   }
+
+  .video-grid-three-cols-wide {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Two columns */
+    gap: 10px; /* Gap between videos */
+    width: 70%; /* Set the container width to 60% */
+    margin: 0 auto; /* Center the container horizontally */
+    align-items: center;
+}
+
+.video-grid-three-cols-wide video {
+    width: 100%; /* Videos fill the container width */
+    height: auto;
+}
 
   .video-grid-four-cols {
     display: grid;
@@ -209,7 +225,54 @@
     font-size: 1em; /* Adjust the font size as needed */
     margin-top: 5px; /* Space between the video and the title */
   }
+  @media (max-width: 600px) {
+    .video-title {
+      font-size: 0.8em; /* Adjust the font size for smaller screens */
+    }
+  }
 </style>
+
+
+<section>
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3"> More Results</h2>
+  </div>
+  <div class="video-grid-three-cols-wide">
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/bear.mp4" type="video/mp4"></video>
+      <h2 class="video-title">Input Video</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/bear-tracks.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">3D Tracks</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/bear.mov" type="video/mp4"></video>
+      <h2 class="video-title">Novel View</h2>
+    </div>
+  </div>
+  <div class="video-grid-three-cols-wide">
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/bike-packing.mp4" type="video/mp4"></video>
+      <h2 class="video-title">Input Video</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/bike-packing-tracks.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">3D Tracks</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/bike-packing.mov" type="video/mp4"></video>
+      <h2 class="video-title">Novel View</h2>
+    </div>
+  </div>
+  </div>
+</section>
+
+<br>
+<br>
+<br>
 
 
 
@@ -382,6 +445,48 @@
   </div>
 </section>
 
+<section>
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3"> Failure Cases</h2>
+  </div>
+  <br>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <p class="has-text-centered"> Fast motion and occlusions are challenging for our method. </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-grid-two-cols">
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/judo.mp4" type="video/mp4"></video>
+    </div>
+
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/judo.mov" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <br>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+        <p class="has-text-centered"> Our method relies on off-the-shelf methods such as monocular depth estimation which can be incorrect. </p>
+    </div>
+  </div>
+  <div class="video-grid-two-cols">
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/hike.mp4" type="video/mp4"></video>
+    </div>
+
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/images/TODO" data-src="static/videos/hike.mov" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+</section>
 
 <br>
 
