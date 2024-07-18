@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Shape of Motion: 4D Reconstruction from a Single Video">
+  <meta property="og:title" content="Shape of Motion: 4D Reconstruction from a Single Video">
+  <meta property="og:description" content="Shape of Motion: 4D Reconstruction from a Single Video">
+  <meta property="og:image" content="TODO/static/images/open_graph.png">
+  <meta property="twitter:title" content="Shape of Motion: 4D Reconstruction from a Single Video">
+  <meta property="twitter:description" content="Shape of Motion: 4D Reconstruction from a Single Video">
+  <meta property="twitter:image" content="TODO/static/images/open_graph.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="4D reconstruction, Dynamic Reconstruction, 3D Tracking, Long-Range Motion">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shape of Motion: 4D Reconstruction from a Single Video</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D65ZW4CJYF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-D65ZW4CJYF');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <script src="./static/js/jquery-3.6.4.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/lazy.js"></script>
+  <script src="./static/js/faster.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-size-2 publication-title">Shape of Motion: <br> 4D Reconstruction from a Single Video</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://qianqianwang68.github.io/">Qianqian Wang</a><sup>1,2*</sup>, </span>
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~vye/">Vickie Ye</a><sup>1*</sup>, </span>
+            <span class="author-block">
+              <a href="https://hangg7.com/">Hang Gao</a><sup>1*</sup>, </span> <br>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/jakeaustin4701">Jake Austin</a><sup>1</sup>, </span>
+            <span class="author-block">
+              <a href="https://zhengqili.github.io/">Zhengqi Li</a><sup>2</sup>, </span> 
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa</a><sup>1</sup> </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>UC Berkeley</span> &nbsp;
+            <span class="author-block"><sup>2</sup>Google Research</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">* Equal Contribution </span> &nbsp;
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="TODO"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="TODO"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Three columns */
+        grid-template-rows: repeat(1, 1fr); /* Two rows */
+        gap: 0px 4px; /* Gap between videos */
+        width: 80%; /* Set the container width to 80% */
+        margin: 0 auto; /* Center the container horizontally */
+    }
+
+    .video-grid video {
+        width: 100%; /* Videos fill the container width */
+        height: auto;
+    }
+</style>
+
+<section>
+  <div class="video-grid">
+    <div>
+      <video muted playsinline autoplay loop poster="static/images/swing.jpg" preload="auto">
+          <source src="static/videos/swing.mp4" type="video/mp4">
+      </video>
+    </div>
+  <div>
+    <video muted playsinline autoplay loop poster="static/images/swing.jpg" preload="auto">
+        <source src="static/videos/horsejump-high.mp4" type="video/mp4">
+    </video>
+  </div>
+  </div>
+  <div class="columns is-centered has-text-centered">
+    <p style="margin-top: 10px; text-align: center;">
+     Shape of Motion reconstructs 4D scenes from a single monocular video.</p>
+  </div>
+</section>
+
+<br>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Monocular dynamic reconstruction is a challenging and long-standing vision problem due to the highly ill-posed nature of the task. Existing approaches are limited in that they either depend on templates, are effective only in quasi-static scenes, or fail to model 3D motion explicitly. In this work, we introduce a method capable of reconstructing generic dynamic scenes, featuring explicit, full-sequence-long 3D motion, from casually captured monocular videos. We tackle the under-constrained nature of the problem with two key insights: First, we exploit the low-dimensional structure of 3D motion by representing scene motion with a compact set of SE(3) motion bases. Each point's motion is expressed as a linear combination of these bases, facilitating soft decomposition of the scene into multiple rigidly-moving groups. Second, we utilize a comprehensive set of data-driven priors, including monocular depth maps and long-range 2D tracks, and devise a method to effectively consolidate these noisy supervisory signals, resulting in a globally consistent representation of the dynamic scene. Experiments show that our method achieves state-of-the-art performance for both long-range 3D/2D motion estimation and novel view synthesis on dynamic scenes. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+</section>
+
+<br>
+
+<style>
+  .video-grid-two-cols {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Two columns */
+      gap: 10px; /* Gap between videos */
+      width: 60%; /* Set the container width to 60% */
+      margin: 0 auto; /* Center the container horizontally */
+  }
+
+  .video-grid-two-cols video {
+      width: 100%; /* Videos fill the container width */
+      height: auto;
+  }
+
+  .video-grid-three-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Two columns */
+      gap: 10px; /* Gap between videos */
+      width: 60%; /* Set the container width to 60% */
+      margin: 0 auto; /* Center the container horizontally */
+  }
+
+  .video-grid-three-cols video {
+      width: 100%; /* Videos fill the container width */
+      height: auto;
+  }
+
+  .video-grid-four-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Two columns */
+    gap: 10px; /* Gap between videos */
+    width: 60%; /* Set the container width to 60% */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+
+  .video-grid-four-cols video {
+      width: 100%; /* Videos fill the container width */
+      height: auto;
+  }
+  .video-container {
+    text-align: center;
+    margin: 12px auto;
+  }
+  .video-title {
+    font-size: 1em; /* Adjust the font size as needed */
+    margin-top: 5px; /* Space between the video and the title */
+  }
+</style>
+
+
+
+<section>
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3"> 3D Tracking Comparison</h2>
+  </div>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+            <p>For each method, we render the video from a novel viewpoint and overlay their predicted 3D tracks onto the novel views.
+              TAPIR + Depth Anything does not produce novel views and we instead overlay their tracks onto our renderings.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="video-grid-four-cols">
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/paper-windmill_hn.mp4" type="video/mp4"></video>
+      <h2 class="video-title">HyperNeRF</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/paper-windmill_d3dgs.mp4" type="video/mp4"></video>
+      <h2 class="video-title">Deformable-3D-GS</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/paper-windmill_tapir_da.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">TAPIR + Depth Anything</h2>
+      </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/paper-windmill_ours.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">Ours</h2>
+    </div>
+  </div>
+  <div class="video-grid-four-cols">
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/spin_hn.mp4" type="video/mp4"></video>
+      <h2 class="video-title">HyperNeRF</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/spin_d3dgs.mp4" type="video/mp4"></video>
+      <h2 class="video-title">Deformable-3D-GS</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/spin_tapir_da.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">TAPIR + Depth Anything</h2>
+      </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/spin_ours.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">Ours</h2>
+    </div>
+  </div>
+  <div class="video-grid-four-cols">
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/backpack_hn.mp4" type="video/mp4"></video>
+      <h2 class="video-title">HyperNeRF</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/backpack_d3dgs.mp4" type="video/mp4"></video>
+      <h2 class="video-title">Deformable-3D-GS</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/backpack_tapir_da.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">TAPIR + Depth Anything</h2>
+      </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/backpack_ours.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">Ours</h2>
+    </div>
+  </div>
+</section>
+
+<br>
+<br>
+<br>
+
+<section>
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3"> Novel View Synthesis Comparison</h2>
+  </div>
+  <!-- <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+            <p>
+            </p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="video-grid-three-cols">
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/mochi-high-five_hn.mp4" type="video/mp4"></video>
+      <h2 class="video-title">HyperNeRF</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/mochi-high-five_d3dgs.mp4" type="video/mp4"></video>
+      <h2 class="video-title">Deformable-3D-GS</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/mochi-high-five_ours.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">Ours</h2>
+    </div>
+  </div>
+  <div class="video-grid-three-cols">
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/sriracha-tree_hn.mp4" type="video/mp4"></video>
+      <h2 class="video-title">HyperNeRF</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/sriracha-tree_d3dgs.mp4" type="video/mp4"></video>
+      <h2 class="video-title">Deformable-3D-GS</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/sriracha-tree_ours.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">Ours</h2>
+    </div>
+  </div>
+</section>
+
+<br>
+<br>
+<br>
+
+<section>
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3"> 2D Tracking Comparison</h2>
+  </div>
+  <!-- <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+            <p>
+            </p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="video-grid-two-cols">
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/mochi-high-five_tapir.mp4" type="video/mp4"></video>
+      <h2 class="video-title">TAPIR</h2>
+    </div>
+
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/mochi-high-five_ours_2d.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">Ours</h2>
+    </div>
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/handwavy_tapir.mp4" type="video/mp4"></video>
+      <h2 class="video-title">TAPIR</h2>
+    </div>
+
+    <div class="video-container">
+      <video class="carousel-video" controls muted loop playsinline poster="static/TODO" data-src="static/videos/handwavy_ours.mp4" type="video/mp4">
+      </video>
+      <h2 class="video-title">Ours</h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- <div class="columns is-centered has-text-centered">
+  <h2 class="title is-3"> More Results</h2>
+</div>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="carousel-extra-padding">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-swing_tire">
+            <video class="carousel-video" id="swing_tire" controls muted loop playsinline height="100%" poster="static/images/swing_tire.jpg" data-src="./static/videos/swing_tire.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-tennis">
+            <video class="carousel-video" id="tennis" controls muted loop playsinline height="100%" poster="static/images/tennis.jpg" data-src="./static/videos/tennis.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-libby">
+            <video class="carousel-video" id="libby" controls muted loop playsinline height="100%" poster="static/images/libby.jpg" data-src="./static/videos/libby.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-soapbox">
+            <video class="carousel-video" id="soapbox" controls muted loop playsinline height="100%" poster="static/images/soapbox.jpg" data-src="./static/videos/soapbox.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-snowy-trees">
+            <video class="carousel-video" id="snowy-trees" controls muted loop playsinline height="100%" poster="static/images/snowy-trees.jpg" data-src="./static/videos/snowy-trees.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-birch">
+            <video class="carousel-video" id="birch" controls muted loop playsinline height="100%" poster="static/images/birch.jpg" data-src="./static/videos/birch.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  <p style="margin-top: 5px; text-align: center; margin-bottom: -15px;">Trail visualization</p>
+  </div>
+</section>
+<br>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="carousel-extra-padding">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-giraffe">
+            <video class="carousel-video" id="giraffe" controls muted loop playsinline height="100%" poster="static/images/giraffe.jpg" data-src="./static/videos/giraffe.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-india">
+            <video class="carousel-video" id="india" controls muted loop playsinline height="100%" poster="static/images/india.jpg" data-src="./static/videos/india.mp4">
+            </video>
+          </div>
+          <div class="item item-longboard">
+            <video class="carousel-video" id="longboard" controls muted loop playsinline height="100%" poster="static/images/longboard.jpg" data-src="./static/videos/longboard.mp4">
+            </video>
+          </div>
+          <div class="item item-squirrel">
+            <video class="carousel-video" id="squirrel" controls muted loop playsinline height="100%" poster="static/images/squirrel.jpg" data-src="./static/videos/squirrel.mp4">
+            </video>
+          </div>
+          <div class="item item-hike">
+            <video class="carousel-video" id="hike" controls muted loop playsinline height="100%" poster="static/images/hike.jpg" data-src="./static/videos/hike.mp4" type="video/mp4">
+            </video>
+          </div>   
+          <div class="item item-flamingo">
+            <video class="carousel-video" id="flamingo" controls muted loop playsinline height="100%" poster="static/images/flamingo.jpg" data-src="./static/videos/flamingo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-walking">
+            <video class="carousel-video" id="walking" controls muted loop playsinline height="100%" poster="static/images/walking.jpg" data-src="./static/videos/walking.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  <p style="margin-top: 5px; text-align: center; margin-bottom: -15px;">Point visualization. Points detected as occluded are marked as "+" </p>
+  </div>
+</section>
+
+<br>
+<br>
+<br>
+
+
+<section>
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3"> Failure Cases</h2>
+  </div>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+              <p>Like many motion estimation methods, our method struggles with rapid and highly non-rigid motion as well as thin structures. In these scenarios, pairwise correspondence methods can fail to provide enough reliable correspondences for our method to compute accurate global motion. </p>
+        </div>
+      </div>
+  </div>
+</div>
+  <br>
+  <div class="video-grid-two-cols">
+      <div>
+          <video class="carousel-video" controls muted loop playsinline poster="static/images/bike-packing.jpg" data-src="static/videos/bike-packing.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div>
+          <video class="carousel-video" controls muted loop playsinline poster="static/images/dog-agility.jpg" data-src="static/videos/dog-agility.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+</section> -->
+
+<br>
+
+<section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Acknowledgements</h2>
+    We thank Ruilong Li, Noah Snavely, Brent Yi and Aleksander Holynski for helpful discussion. This project is supported in part by DARPA No. HR001123C0021. and  IARPA DOI/IBC No. 140D0423C0035. The views and conclusions contained herein are those of the authors and do not represent the official policies or endorsements of these institutions. 
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>
+@inproceedings{som2024,
+  title     = {Shape of Motion: 4D Reconstruction from a Single Video},
+  author    = {Wang, Qianqian and Ye, Vickie and Gao, Hang and Austin, Jake and Li, Zhengqi and Kanazawa, Angjoo},
+  booktitle = {arxiv:TODO},
+  year      = {2024}
+}
+</code></pre>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div align="center" class="container">
+    <div class="columns is-centered">
+        <div class="content">
+            This website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+        </div>
+      </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
