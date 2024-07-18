@@ -1,33 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Get all carousel video elements
-  var carouselVideos = document.querySelectorAll(".carousel-video");
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
 
-  var options = {
-    root: null, // Use the viewport as the root element
-    rootMargin: "0px", // No margin applied to the root
-    threshold: 0.2, // Percentage of the video visible in the viewport
-  };
+  if ("IntersectionObserver" in window) {
+    var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(video) {
+        if (video.isIntersecting) {
+          for (var source in video.target.children) {
+            var videoSource = video.target.children[source];
+            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+              videoSource.src = videoSource.dataset.src;
+            }
+          }
 
-  // Create a new Intersection Observer
-  var observer = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        var carouselVideos = document.querySelectorAll(".carousel-video");
-        console.log(carouselVideos)
-         carouselVideos.forEach(function (video) {
-          video.setAttribute("src", video.getAttribute("data-src"));
-          video.setAttribute("class", "video");
-          video.autoplay = true;
-        });
-
-        // Stop observing the video once it becomes visible
-        observer.unobserve(entry.target);
-      }
+          video.target.load();
+          video.target.classList.remove("lazy");
+          lazyVideoObserver.unobserve(video.target);
+        }
+      });
     });
-  }, options);
 
-  // Observe each carousel video element
-  carouselVideos.forEach(function (video) {
-    observer.observe(video);
-  });
+    lazyVideos.forEach(function(lazyVideo) {
+      lazyVideoObserver.observe(lazyVideo);
+    });
+  }
 });
