@@ -137,8 +137,10 @@
   </div>
   </div>
   <div class="columns is-centered has-text-centered">
-    <p style="margin-top: 10px; text-align: center;">
-     Shape of Motion reconstructs a 4D scene from a single monocular video.</p>
+    <div class="column is-four-fifths">
+      <p style="margin-top: 10px; text-align: center;">
+        Shape of Motion reconstructs a 4D scene from a single monocular video.</p>
+     </div>
   </div>
 </section>
 
@@ -222,7 +224,7 @@
     margin: 12px auto;
   }
   .video-title {
-    font-size: 1em; /* Adjust the font size as needed */
+    font-size: clamp(0.6em, 1vw, 1em); /* Adjust the font size as needed */
     margin-top: 5px; /* Space between the video and the title */
   }
   @media (max-width: 600px) {
@@ -234,6 +236,7 @@
 
 
 <section>
+  <div class="container is-max-desktop">
   <div class="columns is-centered has-text-centered">
     <h2 class="title is-3"> More Results</h2>
   </div>
@@ -268,6 +271,7 @@
     </div>
   </div>
   </div>
+</div>
 </section>
 
 <br>
@@ -279,15 +283,11 @@
 <section>
   <div class="columns is-centered has-text-centered">
     <h2 class="title is-3"> 3D Tracking Comparison</h2>
-  </div>
+  </div> 
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <div class="content has-text-justified">
-            <p>For each method, we render the video from a novel viewpoint and overlay their predicted 3D tracks onto the novel views.
-              TAPIR + Depth Anything does not produce novel views and we instead overlay their tracks onto our renderings.
-            </p>
-        </div>
+        <p> For each method, we render the video from a novel viewpoint and overlay their predicted 3D tracks onto the novel views. TAPIR + Depth Anything does not produce novel views and we instead overlay their tracks onto our renderings. </p>
       </div>
     </div>
   </div>
@@ -445,6 +445,9 @@
   </div>
 </section>
 
+<br>
+<br>
+
 <section>
   <div class="columns is-centered has-text-centered">
     <h2 class="title is-3"> Failure Cases</h2>
@@ -472,7 +475,9 @@
   <br>
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-        <p class="has-text-centered"> Our method relies on off-the-shelf methods such as monocular depth estimation which can be incorrect. </p>
+      <div class="column is-four-fifths">
+        <p class="has-text-centered"> Our method relies on off-the-shelf methods, e.g., mono-depth estimation which can be incorrect. </p>
+      </div>
     </div>
   </div>
   <div class="video-grid-two-cols">
