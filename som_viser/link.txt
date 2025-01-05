@@ -1,0 +1,3 @@
+https://FantasticOven2.github.io/som-viser/baby_1_3dgs.viser&initialCameraPosition=0.087,-2.926,0.246&initialCameraLookAt=0.072,1.015,-0.657&initialCameraUp=-0.000,-0.585,0.811
+
+https://FantasticOven2.github.io/som-viser/build/?playbackPath=https://FantasticOven2.github.io/som-viser/baby_1_3dgs.viser&initialCameraPosition=0.087,-2.926,0.246&initialCameraLookAt=0.072,1.015,-0.657&initialCameraUp=-0.000,-0.585,0.811
