@@ -101,6 +101,27 @@ function results_slide_right() {
   $(newThumbnail).click();
 }
 
+// let currentThumbnail = 0;
+// const thumbnailCount = 9; // Total number of thumbnails
+// const thumbnailFromIndex = [
+//   "#bear-thumb", "#nerfgun-thumb", "#redbox-thumb", "#scissors-thumb", 
+//   "#sunglasses-thumb", "#ledlight-thumb", "#stapler-thumb", 
+//   "#wirecutters-thumb", "#usbplug-thumb"
+// ];
+
+// function results_slide_left() {
+//   const newIndex = ((currentThumbnail - 1 + thumbnailCount) % thumbnailCount);
+//   const newThumbnail = thumbnailFromIndex[newIndex];
+//   $(newThumbnail).click();  // Trigger the click event
+//   currentThumbnail = newIndex;  // Update the current thumbnail index
+// }
+
+// function results_slide_right() {
+//   const newIndex = (currentThumbnail + 1) % thumbnailCount;
+//   const newThumbnail = thumbnailFromIndex[newIndex];
+//   $(newThumbnail).click();  // Trigger the click event
+//   currentThumbnail = newIndex;  // Update the current thumbnail index
+// }
 
 
 // Initialize the page

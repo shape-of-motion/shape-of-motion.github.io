@@ -1,4 +1,4 @@
-/* body {
+body {
     min-height: 100%;
     padding: 2em 2em;
 
@@ -7,8 +7,8 @@
     color: #333;
     font-size: 12px;
     line-height: 20px;
-} */
-/* .video-container {
+}
+.video-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +33,7 @@
     .video-item {
         max-width: 100%;
     }
-} */
+}
 
 .section {
     display: block;
@@ -106,12 +106,12 @@ display: none;
 
 .iframe-container {
     position: relative;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    height: 480px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Uniform shadow in all directions */
+    height: 600px;
     border-radius: 20px;
-    width: 65%;
+    width: 97%;
     overflow: hidden;
-    margin: 10px auto;
+    margin: 10px auto; /* Center the container and add vertical space */
 }
 @media (max-width: 768px) {
     .iframe-container {
@@ -126,16 +126,16 @@ display: none;
     width: 100%;
     height: 100%;
     border: 0;
-} 
+}
 iframe.show {
     display: block;
   }
   
 iframe:not(.show) {
-    display: none;
+display: none;
 }
 
-/* .title {
+.title {
     margin-top: 0px;
     margin-bottom: 0px;
     font-family: 'Varela Round',sans-serif;
@@ -157,9 +157,9 @@ iframe:not(.show) {
     font-weight: 500;
     letter-spacing: 0;
     text-align: center;
-} */
+}
 
-/* .tldr {
+.tldr {
     font-family: 'Open Sans',sans-serif;
     color: #333;
     font-size: 18px;
@@ -256,10 +256,11 @@ iframe:not(.show) {
     margin-top: 0px;
     margin-bottom: 10px;
     border-radius: 15px;
-} */
+}
 
-/* #addtl-video {
+#addtl-video {
     width: 100%;
+    /* max-width: 750px; */
     margin-top: 0px;
     margin-bottom: 10px;
     border-radius: 15px;
@@ -284,6 +285,9 @@ iframe:not(.show) {
     display: block !important;
     height: 1px !important;
     width: 100% !important;
+    /* margin: 1em 0 !important;
+    background-color: #eee !important;
+    clear: both !important; */
   }
 #why-lerf{
     padding-top: 10px;
@@ -329,6 +333,7 @@ iframe:not(.show) {
 
 .paragraph-center {
     margin-top: 0px;
+    /* margin-bottom: 20px; */
     font-family: 'Open Sans',sans-serif;
     color: #333;
     font-size: 16px;
@@ -336,7 +341,7 @@ iframe:not(.show) {
     font-weight: 400;
     letter-spacing: 0;
     text-align: center;
-} */
+}
 
 /* ------------------------------------------------------ */
 /* All teaser-slider things                               */
@@ -359,7 +364,7 @@ iframe:not(.show) {
     display: flex;
     top: 0;
     bottom: 0;
-    margin-top: 80px;
+    margin-top: 80px;  /* (200 - 40) / 2 */
     height: 40px;
     background-color: #FBE2B1;
     border: none;
@@ -443,6 +448,7 @@ iframe:not(.show) {
     border-radius: 2rem 2rem 2rem 2rem;
 }
 .thumbnails {
+    /* width: 100%; */
     height: 100px;
     overflow: hidden;
     margin-top: 0px;
@@ -478,7 +484,7 @@ iframe:not(.show) {
 /* ------------------------------------------------------ */
 /* Image compare */
 /* ------------------------------------------------------ */
-/* .image-compare {
+.image-compare {
     max-width: 100%;
     overflow: hidden;
     position: relative;
@@ -489,6 +495,7 @@ iframe:not(.show) {
     border-radius: 15px;
   }
   .image-compare::before {
+    /* Prevent selection, similar to user-select: none. */
     content: "";
     position: absolute;
     top: 0;
@@ -537,11 +544,12 @@ iframe:not(.show) {
   .inline-image {
     display: inline-block;
     vertical-align: top;
-    height: 1em; 
-    width: auto; 
-    margin: 5px;
+    height: 1em;  /* This makes the image height match the text */
+    width: auto;  /* Maintain aspect ratio */
+    margin: 5px;  /* Add some space around the image */
 }
   .image-compare-handle::before {
+    /* Centered line! */
     box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.4);
     content: "";
     height: 100%;
@@ -578,10 +586,10 @@ iframe:not(.show) {
   .image-compare-after > div {
     z-index: 0;
     right: 0.5em;
-  } */
+  }
 /* ------------------------------------------------------ */
 
-/* :root {
+:root {
     --opacity: 50;
 }
 
@@ -599,6 +607,7 @@ iframe:not(.show) {
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    /* opacity: var(--opacity); */
     filter: opacity(var(--opacity));
     transition-property: filter;
     transition-duration: 0.5s;
@@ -615,6 +624,10 @@ iframe:not(.show) {
     overflow: hidden;
 }
 
+/* #main-results > div {
+    height: 200px;
+    background-color: red;
+} */
 
 .videos {
     visibility: hidden;
@@ -696,7 +709,7 @@ input:checked + .slider:before {
     margin-bottom: 20px;
     height: 40px;
     position: relative;
-    z-index: 41;
+    z-index: 41;  /* the image-compare bar is 40. */
 }
 
 .video-btn {
@@ -771,6 +784,7 @@ input:checked + .slider:before {
 }
 
 .citation {
+    /* // set background color to gray; */
     background-color: #eaeaea;
     text-align: left;
     border-radius: 10px;
@@ -801,10 +815,36 @@ input:checked + .slider:before {
 
 .add-top-padding{
     margin-top: 10px;
-} */
+}
 
+@media screen and (max-width: 750px) {
+    .gpt-query {
+        height: 30px;
+        font-size: 2.5vw;
+    }
 
-/* @media screen and (max-width: 550px) {
+    .slide-arrow {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    /* .subheader {
+        font-size: 16px;
+    } */
+
+    /* .author-text {
+        font-size: 12px;
+    }
+
+    .author-row {
+        height: 35px;
+    } */
+
+    /* #uc-berkeley {
+        font-size: 12px;
+    } */
+
     #pipeline-img {
         width: 90%;
         max-width: 560px;
@@ -822,10 +862,10 @@ input:checked + .slider:before {
     .slide-arrow {
         margin-top: 15px;
       }
-} */
+}
 /* Image compare utility. */
 
-/* .image-compare {
+.image-compare {
     max-width: 100%;
     overflow: hidden;
     position: relative;
@@ -835,6 +875,7 @@ input:checked + .slider:before {
     box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.1);
   }
   .image-compare::before {
+    /* Prevent selection, similar to user-select: none. */
     content: "";
     position: absolute;
     top: 0;
@@ -882,6 +923,7 @@ input:checked + .slider:before {
     box-shadow: 0em 0.1em 0.5em rgba(0, 0, 0, 0.4);
   }
   .image-compare-handle::before {
+    /* Centered line! */
     box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.4);
     content: "";
     height: 100%;
@@ -925,6 +967,7 @@ input:checked + .slider:before {
   .switcher {
     position: relative;
     overflow: hidden;
+    /* box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.1); */
     margin-top: 0em;
     margin-bottom: 0.5em;
     display: block;
@@ -1005,4 +1048,9 @@ input:checked + .slider:before {
     height: auto;
     object-fit: cover;
     border-radius: 10px;
+}
+
+/* .video-scroll-card img {
+    width: 100%;
+    cursor: pointer;
 } */
