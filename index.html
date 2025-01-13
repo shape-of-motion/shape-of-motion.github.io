@@ -300,7 +300,7 @@
     }
 
     /* Carousel styles */
-    .carousel-wrapper {
+    /* .carousel-wrapper {
       position: relative;
       width: 60%;
       height: 100px;
@@ -356,7 +356,70 @@
 
     .carousel-arrow.next {
       right: 0;
+    } */
+
+    /* Update these styles in your existing <style> tag */
+      .carousel-wrapper {
+    position: relative;
+    width: 60%;
+    margin: 0 auto 20px auto;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.5rem;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.carousel-item {
+    flex: 0 0 100px;
+    height: 100px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.carousel-item:hover {
+    border-color: rgba(0, 123, 255, 0.5);
+}
+
+.carousel-item.active {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+    .carousel-wrapper {
+        width: 90%;
     }
+    
+    .carousel-item {
+        flex: 0 0 80px;
+        height: 80px;
+    }
+}
 </style>
 
 <section>
@@ -382,6 +445,39 @@
     class="iframe"
     src="https://shape-of-motion.github.io/build/?playbackPath=https://shape-of-motion.github.io/som_viser/balloon1.viser&initialCameraPosition=0.048,-1.781,0.628&initialCameraLookAt=0.059,0.818,-0.230&initialCameraUp=0.000,0.000,1.000"
   ></iframe>
+  <iframe 
+    class="iframe"
+    src="https://shape-of-motion.github.io/build/?playbackPath=https://shape-of-motion.github.io/som_viser/cow.viser&initialCameraPosition=0.048,-1.781,0.628&initialCameraLookAt=0.059,0.818,-0.230&initialCameraUp=0.000,0.000,1.000"
+  ></iframe>
+  <iframe 
+  class="iframe"
+  src="https://shape-of-motion.github.io/build/?playbackPath=https://shape-of-motion.github.io/som_viser/Balloon2.viser&initialCameraPosition=0.048,-1.781,0.628&initialCameraLookAt=0.059,0.818,-0.230&initialCameraUp=0.000,0.000,1.000"
+  ></iframe>
+  <iframe 
+  class="iframe"
+  src="https://shape-of-motion.github.io/build/?playbackPath=https://shape-of-motion.github.io/som_viser/handwavy.viser&initialCameraPosition=0.048,-1.781,0.628&initialCameraLookAt=0.059,0.818,-0.230&initialCameraUp=0.000,0.000,1.000"
+  ></iframe>
+  <iframe 
+  class="iframe"
+  src="https://shape-of-motion.github.io/build/?playbackPath=https://shape-of-motion.github.io/som_viser/spin.viser&initialCameraPosition=0.048,-1.781,0.628&initialCameraLookAt=0.059,0.818,-0.230&initialCameraUp=0.000,0.000,1.000"
+  ></iframe>
+  <iframe 
+  class="iframe"
+  src="https://shape-of-motion.github.io/build/?playbackPath=https://shape-of-motion.github.io/som_viser/hike.viser&initialCameraPosition=0.048,-1.781,0.628&initialCameraLookAt=0.059,0.818,-0.230&initialCameraUp=0.000,0.000,1.000"
+  ></iframe>
+  <iframe 
+  class="iframe"
+  src="https://shape-of-motion.github.io/build/?playbackPath=https://shape-of-motion.github.io/som_viser/car-shadow.viser&initialCameraPosition=0.048,-1.781,0.628&initialCameraLookAt=0.059,0.818,-0.230&initialCameraUp=0.000,0.000,1.000"
+  ></iframe>
+  <iframe 
+  class="iframe"
+  src="https://shape-of-motion.github.io/build/?playbackPath=https://shape-of-motion.github.io/som_viser/bear.viser&initialCameraPosition=0.048,-1.781,0.628&initialCameraLookAt=0.059,0.818,-0.230&initialCameraUp=0.000,0.000,1.000"
+  ></iframe>
+  <iframe 
+  class="iframe"
+  src="https://shape-of-motion.github.io/build/?playbackPath=https://shape-of-motion.github.io/som_viser/mochi-high-five.viser&initialCameraPosition=0.048,-1.781,0.628&initialCameraLookAt=0.059,0.818,-0.230&initialCameraUp=0.000,0.000,1.000"
+  ></iframe>
+</div>
 </div>
 
   <!-- Carousel section -->
@@ -400,6 +496,30 @@
         <div class="carousel-item" data-id="nerfgun-thumb">
           <img src="data/thumbnails/baloon1.png" alt="Bear">
         </div>
+        <div class="carousel-item" data-id="nerfgun-thumb">
+          <img src="data/thumbnails/cow.jpg" alt="Bear">
+        </div>
+        <div class="carousel-item" data-id="nerfgun-thumb">
+          <img src="data/thumbnails/balloon2.png" alt="Bear">
+        </div>
+        <div class="carousel-item" data-id="nerfgun-thumb">
+          <img src="data/thumbnails/handwavy.png" alt="Bear">
+        </div>
+        <div class="carousel-item" data-id="nerfgun-thumb">
+          <img src="data/thumbnails/spin.png" alt="Bear">
+        </div>
+        <div class="carousel-item" data-id="nerfgun-thumb">
+          <img src="data/thumbnails/hike.jpg" alt="Bear">
+        </div>
+        <div class="carousel-item" data-id="nerfgun-thumb">
+          <img src="data/thumbnails/car-shadow.jpg" alt="Bear">
+        </div>
+        <div class="carousel-item" data-id="nerfgun-thumb">
+          <img src="data/thumbnails/bear.jpg" alt="Bear">
+        </div>
+        <div class="carousel-item" data-id="nerfgun-thumb">
+          <img src="data/thumbnails/mochi-high-five.png" alt="Bear">
+        </div>
       </div>
     </div>
 
@@ -410,6 +530,55 @@
     </button> -->
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get all carousel items
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const iframes = document.querySelectorAll('.iframe');
+    
+    // Set the first iframe and thumbnail as active by default
+    iframes[0].classList.add('active');
+    carouselItems[0].classList.add('active');
+    
+    // Add click event listeners to carousel items
+    carouselItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        // Remove active class from all iframes and items
+        iframes.forEach(iframe => iframe.classList.remove('active'));
+        carouselItems.forEach(item => item.classList.remove('active'));
+        
+        // Add active class to clicked item and corresponding iframe
+        item.classList.add('active');
+        iframes[index].classList.add('active');
+      });
+    });
+
+    // Optional: Add touch scroll support for mobile
+    const carouselContainer = document.querySelector('.carousel-container');
+    let isScrolling = false;
+    let startX;
+    let scrollLeft;
+
+    carouselContainer.addEventListener('touchstart', (e) => {
+      isScrolling = true;
+      startX = e.touches[0].pageX - carouselContainer.offsetLeft;
+      scrollLeft = carouselContainer.scrollLeft;
+    });
+
+    carouselContainer.addEventListener('touchmove', (e) => {
+      if (!isScrolling) return;
+      e.preventDefault();
+      const x = e.touches[0].pageX - carouselContainer.offsetLeft;
+      const walk = (x - startX) * 2;
+      carouselContainer.scrollLeft = scrollLeft - walk;
+    });
+
+    carouselContainer.addEventListener('touchend', () => {
+      isScrolling = false;
+    });
+  });
+</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
