@@ -4896,8 +4896,8 @@ return ret;
 
     // Throw the Gaussian off the screen if it's too close, too far, or too small.
     float weightedDeterminant = vRgba.a * (diag1 * diag2 - offDiag * offDiag);
-    if (weightedDeterminant < 0.25)
-      return;
+    // if (weightedDeterminant < 0.1)
+    //   return;
     vPosition = position.xy;
 
     gl_Position = vec4(
