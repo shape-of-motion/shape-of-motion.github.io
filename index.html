@@ -66,7 +66,9 @@
             <span class="author-block">
               <a href="https://people.eecs.berkeley.edu/~vye/">Vickie Ye</a><sup>1*</sup>, </span>
             <span class="author-block">
-              <a href="https://hangg7.com/">Hang Gao</a><sup>1*</sup>, </span> <br>
+              <a href="https://hangg7.com/">Hang Gao</a><sup>1*</sup>, </span>
+            <span class="author-block">
+              <a href="https://fantasticoven2.github.io/">Weijia Zeng</a><sup>3</sup>, </span> <br>
             <span class="author-block">
               <a href="https://www.linkedin.com/in/jakeaustin4701">Jake Austin</a><sup>1</sup>, </span>
             <span class="author-block">
@@ -78,6 +80,7 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>UC Berkeley</span> &nbsp;
             <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>3</sup>UC San Diego</span>
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block">* Equal Contribution </span> &nbsp;
@@ -300,66 +303,9 @@
     }
 
     /* Carousel styles */
-    /* .carousel-wrapper {
-      position: relative;
-      width: 60%;
-      height: 100px;
-      margin: 0 auto 20px auto;
-    }
-
-    .carousel-container {
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .carousel-items {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .carousel-item {
-      flex: 0 0 100px;
-      height: 100px;
-      cursor: pointer;
-    }
-
-    .carousel-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 4px;
-      transition: transform 0.2s;
-    }
-
-    .carousel-item.active img {
-      border: 2px solid #00d1b2;
-      transform: scale(1.05);
-    }
-
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1;
-      width: 40px;
-      height: 40px;
-      padding: 0;
-      border-radius: 50%;
-      display: flex !important;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .carousel-arrow.prev {
-      left: 0;
-    }
-
-    .carousel-arrow.next {
-      right: 0;
-    } */
-
+  
     /* Update these styles in your existing <style> tag */
-      .carousel-wrapper {
+  .carousel-wrapper {
     position: relative;
     width: 60%;
     margin: 0 auto 20px auto;
@@ -477,17 +423,14 @@
   class="iframe"
   src="https://shape-of-motion.github.io/build/?playbackPath=https://shape-of-motion.github.io/som_viser/mochi-high-five.viser&initialCameraPosition=0.048,-1.781,0.628&initialCameraLookAt=0.059,0.818,-0.230&initialCameraUp=0.000,0.000,1.000"
   ></iframe>
+  <iframe 
+  class="iframe"
+  src="https://shape-of-motion.github.io/build/?playbackPath=https://shape-of-motion.github.io/som_viser/pillow.viser&initialCameraPosition=0.048,-1.781,0.628&initialCameraLookAt=0.059,0.818,-0.230&initialCameraUp=0.000,0.000,1.000"
+  ></iframe>
 </div>
 </div>
-
   <!-- Carousel section -->
   <div class="carousel-wrapper">
-    <!-- <button class="button is-primary carousel-arrow prev" onclick="results_slide_left()">
-      <span class="icon">
-        <i class="fas fa-chevron-left"></i>
-      </span>
-    </button> -->
-
     <div class="carousel-container">
       <div class="carousel-items" id="results-objs-scroll">
         <div class="carousel-item" data-id="bear-thumb">
@@ -497,7 +440,7 @@
           <img src="data/thumbnails/baloon1.png" alt="Bear">
         </div>
         <div class="carousel-item" data-id="nerfgun-thumb">
-          <img src="data/thumbnails/cow.jpg" alt="Bear">
+          <img src="data/thumbnails/baby.png" alt="Bear">
         </div>
         <div class="carousel-item" data-id="nerfgun-thumb">
           <img src="data/thumbnails/balloon2.png" alt="Bear">
@@ -509,25 +452,30 @@
           <img src="data/thumbnails/spin.png" alt="Bear">
         </div>
         <div class="carousel-item" data-id="nerfgun-thumb">
-          <img src="data/thumbnails/hike.jpg" alt="Bear">
+          <img src="data/thumbnails/seal.png" alt="Bear">
         </div>
         <div class="carousel-item" data-id="nerfgun-thumb">
-          <img src="data/thumbnails/car-shadow.jpg" alt="Bear">
+          <img src="data/thumbnails/cat-piano.png" alt="Bear">
         </div>
         <div class="carousel-item" data-id="nerfgun-thumb">
-          <img src="data/thumbnails/bear.jpg" alt="Bear">
+          <img src="data/thumbnails/dog-grass.png" alt="Bear">
         </div>
         <div class="carousel-item" data-id="nerfgun-thumb">
           <img src="data/thumbnails/mochi-high-five.png" alt="Bear">
         </div>
+        <div class="carousel-item" data-id="nerfgun-thumb">
+          <img src="data/thumbnails/pillow.png" alt="Bear">
+        </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- <button class="button is-primary carousel-arrow next" onclick="results_slide_right()">
-      <span class="icon">
-        <i class="fas fa-chevron-right"></i>
-      </span>
-    </button> -->
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <div class="content has-text-centered">
+      <p>This demo is made with Viser; please check <a href="https://github.com/nerfstudio-project/viser/tree/brent/shape-of-motion">here</a> if you are interested.</p>
+    </div>
   </div>
 </div>
 
@@ -1070,7 +1018,7 @@
 <section class="section" id="Acknowledgements">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Acknowledgements</h2>
-    We thank Ruilong Li, Noah Snavely, Brent Yi and Aleksander Holynski for helpful discussion. We are in memory of our beloved cat Sriracha, who will always be missed and loved. This project is supported in part by DARPA No. HR001123C0021. and  IARPA DOI/IBC No. 140D0423C0035. The views and conclusions contained herein are those of the authors and do not represent the official policies or endorsements of these institutions. 
+    We thank Ruilong Li, Brent Yi, Noah Snavely and Aleksander Holynski for helpful discussion. We also thank Brent Yi for helping us set up the interactive demo. We are in memory of our beloved cat Sriracha, who will always be missed and loved. This project is supported in part by DARPA No. HR001123C0021. and  IARPA DOI/IBC No. 140D0423C0035. The views and conclusions contained herein are those of the authors and do not represent the official policies or endorsements of these institutions. 
   </div>
 </section>
 
