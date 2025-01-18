@@ -124,7 +124,6 @@ code {
 
 .results .iframe-wrapper {
   flex-grow: 1;
-  background: #fff;
 }
 
 .results iframe {
@@ -133,7 +132,7 @@ code {
   height: 100%;
   border-radius: 0.3rem;
   overflow: hidden;
-  background: #fff; /* or you can use background: white; */
+  background: #000;
 }
 
 .results-inner {
@@ -236,16 +235,16 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: #aaa;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #fff;
+  background: #777;
 }
 
 /* For Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #fff #f1f1f1;
+  scrollbar-color: #aaa #f1f1f1;
 }
