@@ -1,10 +1,9 @@
 const results = [
   [
-    "Coffee Machine",
+    "ayuna_1",
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/baby_1.viser",
-      "&synchronizedVideoOverlay=/data/demo_vids/baby_1.mp4",
       "&initialCameraPosition=0.681,-3.638,-0.231",
       "&initialCameraLookAt=0.055,1.067,-0.045",
       "&initialCameraUp=-0.000,-0.120,0.993",
@@ -12,7 +11,7 @@ const results = [
     "./data/thumbnails/baby_2.png",
   ],
   [
-    "Coffee Machine",
+    "sriracha-tree",
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/sriracha-tree.viser",
@@ -24,7 +23,7 @@ const results = [
     "./data/thumbnails/sriracha-tree.png",
   ],
   [
-    "EgoExo4D IIITH Cooking 120",
+    "balloon1",
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/balloon1.viser",
@@ -36,7 +35,7 @@ const results = [
   ],
 
   [
-    "Refrigerator",
+    "ayuna_2",
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/baby_5.viser",
@@ -47,7 +46,7 @@ const results = [
     "./data/thumbnails/baby.png",
   ],
   [
-    "Copy Machine",
+    "balloon2",
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/balloon2.viser",
@@ -58,7 +57,7 @@ const results = [
     "./data/thumbnails/balloon2.png",
   ],
   [
-    "Coke",
+    "handwavy",
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/handwavy.viser",
@@ -70,7 +69,7 @@ const results = [
     "./data/thumbnails/handwavy.png",
   ],
   [
-    "EgoExo4D Georgia Tech Bike",
+    "spin",
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/spin.viser",
@@ -82,7 +81,7 @@ const results = [
   ],
 
   [
-    "EgoExo4D Georgia Tech Covid",
+    "seal",
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/seal.viser",
@@ -93,7 +92,7 @@ const results = [
     "./data/thumbnails/seal.png",
   ],
   [
-    "Jog",
+    "cat-piano",
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/cat-piano.viser",
@@ -104,7 +103,7 @@ const results = [
     "./data/thumbnails/cat-piano.png",
   ],
   [
-    "EgoExo4D IIITH Cooking 64",
+    "dog-rotation-vase",
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/dog_rotation_vase.viser",
@@ -115,7 +114,7 @@ const results = [
     "./data/thumbnails/dog-grass.png",
   ],
   [
-    "EgoExo4D UPenn Piano",
+    "mochi-high-five",
     [
       "https://shape-of-motion.github.io/build",
       "/?playbackPath=https://shape-of-motion.github.io/som_viser/mochi-high-five.viser",
@@ -126,7 +125,7 @@ const results = [
     "./data/thumbnails/mochi-high-five.png",
   ],
   [
-    "EgoExo4D UPenn Piano",
+    "pillow",
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/pillow.viser",
@@ -135,6 +134,28 @@ const results = [
       "&initialCameraUp=-0.000,-0.000,1.000",
     ],
     "./data/thumbnails/pillow.png",
+  ],
+  [
+    "tiger",
+    [
+      "https://shape-of-motion.github.io/build/",
+      "?playbackPath=https://shape-of-motion.github.io/som_viser/tiger.viser",
+      "&initialCameraPosition=-0.099,-4.688,0.014",
+      "&initialCameraLookAt=0.000,0.000,0.000",
+      "&initialCameraUp=-0.000,-0.000,1.000",
+    ],
+    "./data/thumbnails/tiger.png",
+  ],
+  [
+    "cat-spinning",
+    [
+      "https://shape-of-motion.github.io/build/",
+      "?playbackPath=https://shape-of-motion.github.io/som_viser/cat-spinning.viser",
+      "&initialCameraPosition=0.988,-7.375,-0.049",
+      "&initialCameraLookAt=0.000,0.000,0.000",
+      "&initialCameraUp=-0.000,-0.000,1.000",
+    ],
+    "./data/thumbnails/cat-spinning.png",
   ],
 ];
 
