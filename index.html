@@ -24,7 +24,7 @@
   
     gtag('config', 'G-D65ZW4CJYF');
   </script>
-
+  
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
@@ -36,12 +36,15 @@
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
 
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    <script src="./static/js/jquery-3.6.4.min.js"></script>
+
+  <script src="./static/js/jquery-3.6.4.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/lazy.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+
 </head>
 <body>
 
@@ -57,7 +60,9 @@
             <span class="author-block">
               <a href="https://people.eecs.berkeley.edu/~vye/">Vickie Ye</a><sup>1*</sup>, </span>
             <span class="author-block">
-              <a href="https://hangg7.com/">Hang Gao</a><sup>1*</sup>, </span> <br>
+              <a href="https://hangg7.com/">Hang Gao</a><sup>1*</sup>, </span>
+            <span class="author-block">
+              <a href="https://fantasticoven2.github.io/">Weijia Zeng</a><sup>3</sup>, </span> <br>
             <span class="author-block">
               <a href="https://www.linkedin.com/in/jakeaustin4701">Jake Austin</a><sup>1</sup>, </span>
             <span class="author-block">
@@ -69,6 +74,7 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>UC Berkeley</span> &nbsp;
             <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>3</sup>UC San Diego</span>
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block">* Equal Contribution </span> &nbsp;
@@ -96,6 +102,16 @@
                   <span>Code</span>
                   </a>
               </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="./results.html" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-building"></i>
+                  </span>
+                  <span>Interactive Gallery</span>
+                  </a>
+              </span>
             </div>
 
           </div>
@@ -104,6 +120,7 @@
     </div>
   </div>
 </section>
+
 
 <style>
     .video-grid {
@@ -159,9 +176,7 @@
     </div>
     <br>
 </section>
-
-<br>
-
+    
 <style>
   .video-grid-two-cols {
       display: grid;
@@ -242,8 +257,268 @@
       font-size: 0.8em; /* Adjust the font size for smaller screens */
     }
   }
+
+/* Custom styles that still need to be maintained */
+.iframe-container {
+      position: relative;
+      width: 50%;
+      height: 600px;
+      margin: 0 auto 20px auto;
+      background-color: rgba(255, 255, 255, 0.5);  /* White with 50% opacity */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+      border-radius: 8px;
+    }
+
+    .iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: none;
+    }
+
+    .iframe.active {
+      display: block;
+    }
+
+    .click-and-move-overlay {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      pointer-events: none;
+      text-align: center;
+    }
+
+    .tldr {
+      margin: 0;
+      padding: 5px 10px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 5px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .inline-image {
+      height: 20px;
+      vertical-align: middle;
+    }
+
+    /* Carousel styles */
+  
+    /* Update these styles in your existing <style> tag */
+  .carousel-wrapper {
+    position: relative;
+    width: 60%;
+    margin: 0 auto 20px auto;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.5rem;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.carousel-item {
+    flex: 0 0 100px;
+    height: 100px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.carousel-item:hover {
+    border-color: rgba(0, 123, 255, 0.5);
+}
+
+.carousel-item.active {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+    .carousel-wrapper {
+        width: 90%;
+    }
+    
+    .carousel-item {
+        flex: 0 0 80px;
+        height: 80px;
+    }
+}
 </style>
 
+<section>
+<div class="columns is-centered has-text-centered">
+  <h2 class="title is-3"> Interactive Demo</h2>
+</div>
+<div class="iframe-container">
+  <div class="click-and-move-overlay">
+    <h1 class="tldr">
+      <b>
+        <img src="data/drag_icon.png" alt="" class="inline-image">
+        Click and move me!
+        <img src="data/drag_icon.png" alt="" class="inline-image">
+      </b>
+    </h1>
+  </div>
+
+  <iframe 
+    class="iframe"
+    src="https://shape-of-motion.github.io/build/?playbackPath=https://shape-of-motion.github.io/som_viser/baby_1.viser&initialCameraPosition=0.681,-3.638,-0.231&initialCameraLookAt=0.055,1.067,-0.045&initialCameraUp=-0.000,-0.120,0.993"
+  ></iframe>
+</div>
+</div>
+    </div>
+  </div>
+</div>
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <div class="content has-text-centered">
+      <p>Check our <a href="./results.html">gallery</a> for more interactive results!</p>
+    </div>
+  </div>
+</div>
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <div class="content has-text-centered">
+      <p>Interactive Demos' cameras and depths are estimated with <a href="https://mega-sam.github.io/"> MegaSaM </a> and this demo is made with <a href="https://github.com/nerfstudio-project/viser/tree/brent/shape-of-motion">viser</a>.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get all carousel items
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const iframes = document.querySelectorAll('.iframe');
+    
+    // Set the first iframe and thumbnail as active by default
+    iframes[0].classList.add('active');
+    carouselItems[0].classList.add('active');
+    
+    // Add click event listeners to carousel items
+    carouselItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        // Remove active class from all iframes and items
+        iframes.forEach(iframe => iframe.classList.remove('active'));
+        carouselItems.forEach(item => item.classList.remove('active'));
+        
+        // Add active class to clicked item and corresponding iframe
+        item.classList.add('active');
+        iframes[index].classList.add('active');
+      });
+    });
+
+    // Optional: Add touch scroll support for mobile
+    const carouselContainer = document.querySelector('.carousel-container');
+    let isScrolling = false;
+    let startX;
+    let scrollLeft;
+
+    carouselContainer.addEventListener('touchstart', (e) => {
+      isScrolling = true;
+      startX = e.touches[0].pageX - carouselContainer.offsetLeft;
+      scrollLeft = carouselContainer.scrollLeft;
+    });
+
+    carouselContainer.addEventListener('touchmove', (e) => {
+      if (!isScrolling) return;
+      e.preventDefault();
+      const x = e.touches[0].pageX - carouselContainer.offsetLeft;
+      const walk = (x - startX) * 2;
+      carouselContainer.scrollLeft = scrollLeft - walk;
+    });
+
+    carouselContainer.addEventListener('touchend', () => {
+      isScrolling = false;
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Set initial active state
+    const firstIframe = document.querySelector('.iframe');
+    const firstThumb = document.querySelector('.carousel-item');
+    if (firstIframe && firstThumb) {
+      firstIframe.classList.add('active');
+      firstThumb.classList.add('active');
+    }
+
+    // Add click handlers to carousel items
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    carouselItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        // Remove active class from all iframes and thumbnails
+        document.querySelectorAll('.iframe').forEach(iframe => {
+          iframe.classList.remove('active');
+        });
+        document.querySelectorAll('.carousel-item').forEach(thumb => {
+          thumb.classList.remove('active');
+        });
+
+        // Add active class to clicked thumbnail and corresponding iframe
+        item.classList.add('active');
+        const iframes = document.querySelectorAll('.iframe');
+        if (iframes[index]) {
+          const iframe = iframes[index];
+          iframe.classList.add('active');
+          // Reload iframe by resetting its src
+          const currentSrc = iframe.src;
+          iframe.src = currentSrc;
+        }
+
+        // Update current thumbnail index for carousel navigation
+        window.currentThumbnail = index;
+      });
+    });
+  });
+
+  // Carousel navigation functions
+  function results_slide_left() {
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const newIndex = ((window.currentThumbnail - 1 + carouselItems.length) % carouselItems.length);
+    carouselItems[newIndex].click();
+  }
+
+  function results_slide_right() {
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const newIndex = (window.currentThumbnail + 1) % carouselItems.length;
+    carouselItems[newIndex].click();
+  }
+</script>
+</section>
+<br>
+<br>
+<br>
 
 <section>
   <div class="columns is-centered has-text-centered">
@@ -446,16 +721,6 @@
   <div class="columns is-centered has-text-centered">
     <h2 class="title is-3"> Novel View Synthesis Comparison</h2>
   </div>
-  <!-- <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <div class="content has-text-justified">
-            <p>
-            </p>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <div class="video-grid-three-cols">
     <div class="video-container">
       <video class="lazy" autoplay controls muted loop playsinline poster="static/images/mochi-high-five_hn.jpg">
@@ -502,16 +767,6 @@
   <div class="columns is-centered has-text-centered">
     <h2 class="title is-3"> 2D Tracking Comparison</h2>
   </div>
-  <!-- <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <div class="content has-text-justified">
-            <p>
-            </p>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <div class="video-grid-two-cols-narrow">
     <div class="video-container">
       <video class="lazy" autoplay controls muted loop playsinline poster="static/images/mochi-high-five_tapir.jpg"> <source data-src="static/videos/mochi-high-five_tapir.mp4" type="video/mp4"></video>
@@ -600,7 +855,7 @@
 <section class="section" id="Acknowledgements">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Acknowledgements</h2>
-    We thank Ruilong Li, Noah Snavely, Brent Yi and Aleksander Holynski for helpful discussion. We are in memory of our beloved cat Sriracha, who will always be missed and loved. This project is supported in part by DARPA No. HR001123C0021. and  IARPA DOI/IBC No. 140D0423C0035. The views and conclusions contained herein are those of the authors and do not represent the official policies or endorsements of these institutions. 
+    We thank Ruilong Li, Brent Yi, Noah Snavely and Aleksander Holynski for helpful discussion. We also thank Brent Yi for helping us set up the interactive demo. We are in memory of our beloved cat Sriracha, who will always be missed and loved. This project is supported in part by DARPA No. HR001123C0021. and  IARPA DOI/IBC No. 140D0423C0035. The views and conclusions contained herein are those of the authors and do not represent the official policies or endorsements of these institutions. 
   </div>
 </section>
 
@@ -611,7 +866,7 @@
     <pre><code>
 @inproceedings{som2024,
   title     = {Shape of Motion: 4D Reconstruction from a Single Video},
-  author    = {Wang, Qianqian and Ye, Vickie and Gao, Hang and Austin, Jake and Li, Zhengqi and Kanazawa, Angjoo},
+  author    = {Wang, Qianqian and Ye, Vickie and Gao, Hang and Zeng, Weijia and Austin, Jake and Li, Zhengqi and Kanazawa, Angjoo},
   journal   = {arXiv preprint arXiv:2407.13764},
   year      = {2024}
 }
