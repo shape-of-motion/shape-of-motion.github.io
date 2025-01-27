@@ -11,6 +11,17 @@ const results = [
     "./data/thumbnails/baby_2.png",
   ],
   [
+    "cat-spinning",
+    [
+      "https://shape-of-motion.github.io/build/",
+      "?playbackPath=https://shape-of-motion.github.io/som_viser/cat-spinning.viser",
+      "&initialCameraPosition=0.988,-7.375,-0.049",
+      "&initialCameraLookAt=0.000,0.000,0.000",
+      "&initialCameraUp=-0.000,-0.000,1.000",
+    ],
+    "./data/thumbnails/cat-spinning.png",
+  ],
+  [
     "sriracha-tree",
     [
       "https://shape-of-motion.github.io/build/",
@@ -145,17 +156,6 @@ const results = [
       "&initialCameraUp=-0.000,-0.000,1.000",
     ],
     "./data/thumbnails/tiger.png",
-  ],
-  [
-    "cat-spinning",
-    [
-      "https://shape-of-motion.github.io/build/",
-      "?playbackPath=https://shape-of-motion.github.io/som_viser/cat-spinning.viser",
-      "&initialCameraPosition=0.988,-7.375,-0.049",
-      "&initialCameraLookAt=0.000,0.000,0.000",
-      "&initialCameraUp=-0.000,-0.000,1.000",
-    ],
-    "./data/thumbnails/cat-spinning.png",
   ],
 ];
 
