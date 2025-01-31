@@ -373,7 +373,7 @@
 }
 </style>
 
-<section id="demo">
+<section>
 <div class="columns is-centered has-text-centered">
   <h2 class="title is-3"> Interactive Demo</h2>
 </div>
@@ -886,6 +886,21 @@
     </div>
 </footer>
 
+<script>
+  // Check if URL contains #demo hash on page load
+  window.addEventListener('load', function() {
+    if (window.location.hash === '#demo') {
+      window.location.href = './results.html';
+    }
+  });
+
+  // Also check if hash changes while on the page
+  window.addEventListener('hashchange', function() {
+    if (window.location.hash === '#demo') {
+      window.location.href = './results.html';
+    }
+  });
+</script>
 
 </body>
 </html>
