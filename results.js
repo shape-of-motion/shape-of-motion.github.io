@@ -4,7 +4,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/baby_1.viser",
-      "&synchronizedVideoOverlay=/som_viser/coke.mp4",
+      "&synchronizedVideoOverlay=/som_viser/baby_1.mp4",
       "&initialCameraPosition=0.681,-3.638,-0.231",
       "&initialCameraLookAt=0.055,1.067,-0.045",
       "&initialCameraUp=-0.000,-0.120,0.993",
@@ -16,6 +16,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/cat-spinning.viser",
+      "&synchronizedVideoOverlay=/som_viser/cat-spinning.mp4",
       "&initialCameraPosition=0.988,-7.375,-0.049",
       "&initialCameraLookAt=0.000,0.000,0.000",
       "&initialCameraUp=-0.000,-0.000,1.000",
@@ -27,6 +28,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/sriracha-tree.viser",
+      "&synchronizedVideoOverlay=/som_viser/sriracha-tree.mp4",
       "&synchronizedVideoTimeOffset=-0.05",
       "&initialCameraPosition=0.681,-3.638,-0.231",
       "&initialCameraLookAt=0.055,1.067,-0.045",
@@ -39,6 +41,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/balloon1.viser",
+      "&synchronizedVideoOverlay=/som_viser/Balloon1.mp4",
       "&initialCameraPosition=-0.070,-2.577,-0.124",
       "&initialCameraLookAt=0.000,0.000,0.052",
       "&initialCameraUp=0.000,0.000,1.000",
@@ -51,6 +54,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/baby_5.viser",
+      "&synchronizedVideoOverlay=/som_viser/baby_5.mp4",
       "&initialCameraPosition=-1.204,-2.983,-0.612",
       "&initialCameraLookAt=0.000,0.000,0.000",
       "&initialCameraUp=-0.000,-0.000,1.000",
@@ -62,6 +66,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/balloon2.viser",
+      "&synchronizedVideoOverlay=/som_viser/Balloon2.mp4",
       "&initialCameraPosition=-1.054,-3.453,0.364",
       "&initialCameraLookAt=0.000,0.000,0.000",
       "&initialCameraUp=-0.000,-0.000,1.000"
@@ -73,6 +78,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/handwavy.viser",
+      "&synchronizedVideoOverlay=/som_viser/handwavy.mp4",
       "&initialCameraPosition=-0.538,-3.289,-0.423",
       "&initialCameraLookAt=0.000,0.000,0.000",
       "&initialCameraUp=-0.000,-0.000,1.000",
@@ -85,6 +91,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/spin.viser",
+      "&synchronizedVideoOverlay=/som_viser/spin.mp4",
       "&initialCameraPosition=1.901,-3.222,-0.772",
       "&initialCameraLookAt=0.000,0.000,0.000",
       "&initialCameraUp=-0.000,-0.000,1.000",
@@ -97,6 +104,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/seal.viser",
+      "&synchronizedVideoOverlay=/som_viser/seal.mp4",
       "&initialCameraPosition=-0.009,-3.441,0.204",
       "&initialCameraLookAt=0.000,0.000,0.000",
       "&initialCameraUp=-0.000,-0.000,1.000",
@@ -108,6 +116,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/cat-piano.viser",
+      "&synchronizedVideoOverlay=/som_viser/cat-piano.mp4",
       "&initialCameraPosition=0.167,-3.094,-0.280",
       "&initialCameraLookAt=0.000,0.000,0.000",
       "&initialCameraUp=-0.000,-0.000,1.000",
@@ -119,6 +128,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/dog_rotation_vase.viser",
+      "&synchronizedVideoOverlay=/som_viser/dog_rotation_vase.mp4",
       "&initialCameraPosition=0.490,-2.577,-0.485",
       "&initialCameraLookAt=0.000,0.000,0.000",
       "&initialCameraUp=-0.000,-0.000,1.000",
@@ -130,6 +140,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build",
       "/?playbackPath=https://shape-of-motion.github.io/som_viser/mochi-high-five.viser",
+      "&synchronizedVideoOverlay=/som_viser/mochi-high-five.mp4",
       "&initialCameraPosition=0.031,-4.015,0.217",
       "&initialCameraLookAt=0.000,0.000,0.000",
       "&initialCameraUp=-0.000,-0.000,1.000",
@@ -141,6 +152,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/pillow.viser",
+      "&synchronizedVideoOverlay=/som_viser/pillow.mp4",
       "&initialCameraPosition=0.604,-1.987,0.046",
       "&initialCameraLookAt=0.576,-1.890,0.000",
       "&initialCameraUp=-0.000,-0.000,1.000",
@@ -152,6 +164,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/tiger.viser",
+      "&synchronizedVideoOverlay=/som_viser/tiger.mp4",
       "&initialCameraPosition=-0.099,-4.688,0.014",
       "&initialCameraLookAt=0.000,0.000,0.000",
       "&initialCameraUp=-0.000,-0.000,1.000",
