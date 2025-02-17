@@ -41,7 +41,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/balloon1.viser",
-      "&synchronizedVideoOverlay=/som_viser/Balloon1.mp4",
+      "&synchronizedVideoOverlay=/som_viser/Balloon_1.mp4",
       "&initialCameraPosition=-0.070,-2.577,-0.124",
       "&initialCameraLookAt=0.000,0.000,0.052",
       "&initialCameraUp=0.000,0.000,1.000",
@@ -66,7 +66,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/balloon2.viser",
-      "&synchronizedVideoOverlay=/som_viser/Balloon2.mp4",
+      "&synchronizedVideoOverlay=/som_viser/Balloon_2.mp4",
       "&initialCameraPosition=-1.054,-3.453,0.364",
       "&initialCameraLookAt=0.000,0.000,0.000",
       "&initialCameraUp=-0.000,-0.000,1.000"
