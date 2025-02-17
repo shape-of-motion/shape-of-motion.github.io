@@ -4,6 +4,7 @@ const results = [
     [
       "https://shape-of-motion.github.io/build/",
       "?playbackPath=https://shape-of-motion.github.io/som_viser/baby_1.viser",
+      "&synchronizedVideoOverlay=/som_viser/coke.mp4",
       "&initialCameraPosition=0.681,-3.638,-0.231",
       "&initialCameraLookAt=0.055,1.067,-0.045",
       "&initialCameraUp=-0.000,-0.120,0.993",
