@@ -124,18 +124,6 @@ const results = [
     "./data/thumbnails/cat-piano.png",
   ],
   [
-    "dog-rotation-vase",
-    [
-      "https://shape-of-motion.github.io/build/",
-      "?playbackPath=https://shape-of-motion.github.io/som_viser/dog_rotation_vase.viser",
-      "&synchronizedVideoOverlay=/som_viser/dog-rotation-vase.mp4",
-      "&initialCameraPosition=0.490,-2.577,-0.485",
-      "&initialCameraLookAt=0.000,0.000,0.000",
-      "&initialCameraUp=-0.000,-0.000,1.000",
-    ],
-    "./data/thumbnails/dog-grass.png",
-  ],
-  [
     "mochi-high-five",
     [
       "https://shape-of-motion.github.io/build",
